@@ -5,7 +5,7 @@ How could having easy access to the entire history of a file make you a more eff
 Sure, going back to previous versions after a while makes updating the current version much easier.
 
 What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
-Main pro is that i can decide when to commit to follow the thumb rule every commit should have one clear logical purpuse, which is quite difficult to achive with automatic saving like google docs. Con is to decide when to commit and what to commit. Chnages could be too big to commit reasonable.
+Main pro is that i can decide when to commit to follow the thumb rule every commit should have one clear logical purpuse, which is quite difficult to achive with automatic saving like google docs. Con is to decide when to commit and what to commit. Changes could be too big to commit consistent with reason.
 
 Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
 Because they are related to each other.
@@ -14,9 +14,17 @@ How can you use the commands git log and git diff to view the history of files?
 git log gives me the list of commint with comment what has been changed and git diff compares two commits in terms of changing.
 
 How might using version control make you more confident to make changes that could break something?
-It makes me more confident to find the bug
+It makes me more confident to make experiments in the code. If it doesn't work, I can always go back to the root version. 
 
 Now that you have your workspace set up, what do you want to try using Git for?
-No clue yet
+For my own projects. A project will never stay as it is. Updates/amendments will come automatically.
 
+Commands:
 
+q |    exit git log!
+git log  |    List the commits and show which files have changed
+git log --stat  |    Show addition information about the commits
+git diff id1 id2  |    Compare two commits
+git clone  |    Create a local copy/clone from the repository
+git config --global color.ui auto |    get colored diff output
+git checkout id  |    Switch to a specific ID. This is not a checkout to edit like in SVN or TFS!

@@ -1,0 +1,36 @@
+What happens when you initialize a repository? Why do you need to do it?
+It creates a new local repository (hidden) .git folder, where all the version changes will be stored.
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+Staging area is intermediate area between the working directory and the repository so to say the entrance-hall of the repository. All filles should be committed to the repository should go first into staging area. It gives us second check what we want to commit. We can add/remove files as we want before commit.
+
+How can you use the staging area to make sure you have one commit per logical change?
+It is a good control to think over if the files what we want to commit are related to the same clear logical change or not.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+If you want to make experiement, you can create a branch for that which would be independent from the master branch. Or for a new version like a game with easy mode.
+
+How do the diagrams help you visualize the branch structure?
+It is very helpful to visualize the commits on branches and establish the parent root.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+It makes us clear that the 2 or more branches' recent versions are merged into one.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+Pro of Git's automatic merging is the job is done by Git time saving. Con it leaves room for logical error in code, what we can avoid only if we manually check the conflicting changes.
+
+
+Commands:
+
+git add  |    Add a file to the staging area
+git commit  |    Commit the files from the staging area to the repository 
+git status  |    Show which files are in the staging area, and which files from the working directory are not part of the repository    
+git diff  |    Git diff without arguments is comparing the working directory with the staging area
+git diff --staged  |    Compare the staging area with the repository
+git reset --hard  |    Undo all changes! There is no rollback for this, so be carefull!
+git checkout master  |    Restore the "Head" to the latest check-in (this will be part of a later lesson/module)
+git log --graph --oneline <branch1> <branch2>  |    Show a visual representation of the commit history within different branches
+git checkout -b new_branch_name  |    Creates a new branch and do a checkout on this branch in one call instead of git branch new_branch_name and git checkout new_branch_name
+git merge branch1 branch2  |    Merge two branches, branch2 get merged into branch1
+git branch -d name  |    Remove the branch with the specified name
+git show commitId  |    Show the changes made in this commit compared to the previous version. This is working even after merging.
