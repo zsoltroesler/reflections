@@ -1,3 +1,29 @@
-When would you want to use a remote repository rather than keeping all your work
-local?
+When would you want to use a remote repository rather than keeping all your work local?
 For instance if I'd like to share my project with other developers who also contribute to my project and make changes on it.
+
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+I would have the control when the project should be up-to-date. I mean if I make continuous changes in a row on the project but the intermediate steps would cause conflict, I would not sync with remote repository until all conflicts are fixed.
+
+Describe the differences between forks, clones, and branches. When would you use one instead of another?
+A fork is a copy of a repository on GitHub. It does not create a local repository on our computer, that's why it is rather static and it allows me to review or share code on Github. I can add collaborators to my forked repo. If I want to make it active, I have to clone it to my computer. Forking lets anyone fork an existing repository and push changes to their personal fork without requiring access from the source repository. The changes must then be pulled into the source repository by the project maintainer. It is popular with open source projects because it allows people to work independently without upfront coordination.
+A clone is repository into a new directory. This can be from GitHub to my computer or from my computer as well. This is where all changes happen. But this is not visible for other fellow developers because it is on my computer. That is why I have to commit changes to my forked repo on GitHub for review by others.
+A repository has a master branch. We can create subsquent branches for different purposes like new feature testing, bug fixing etc...
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+We have a reference (online) compare to our local status (offline).
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+I could use other version-control systems like Dropbox, Google Docs and let others to contibute. Communication would be for example via email. Workflow from the user's perspective would be easier because in Git you must know some specific commands and the entiry workflow. However it would be harder to track the versions history and simultanous working by many contributors is not possible i.e Google Docs. Only one person can edit the doc at the same time. And it works only online.
+
+When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+If you make changes directly on master branch, the workflow is linear. Updating local master branch and then pushing to GitHub. But this is not really a collaboration with other people. If other people work also on my project or I contribute to another one, using separate branch for my work is the best choice. With pull request I can send my updates for review for the other fellow developers before merge into the master branch.
+
+Commands:
+
+git remote  |    Show all remote locations for the repository
+git remote add origin url |     Add a new remote location for the repository. Origin is the default name to use when you create only one remote location. Url should be the https url to the github repository.
+git remove -v  |    Outputs the remote locations with verbose information (fetch and push urls)
+git push origin master  |    Uploads all local branch commits to GitHub
+git pull origin master  |    Downloads bookmarks histroy and incorporates changes. = Git fetch origin + git merge master origin/master
+git fetch origin  |    Downloads all history from the repository bookmark
+git merge master origin/master |	Combines bookmark's branch into curreent local branch
